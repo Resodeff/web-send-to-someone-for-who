@@ -1,0 +1,352 @@
+<html>
+
+<head>
+  <meta classet="utf8" />
+  </i><title>kỷ niệm về em</title>
+  <link rel="icon" href="img/trym1.png">
+  <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="trangchinh.css" rel="stylesheet">
+  <link href="vendor/bootstrap" rel="stylesheet">
+  <script src="vendor/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <!-- input file ẩn để chọn ảnh -->
+<input type="file" id="fileInput" accept="image/*" style="display:none">
+
+<script>
+let currentBox = null;
+
+// khi click vào một ảnh
+function chooseImage(img) {
+  currentBox = img;
+  document.getElementById('fileInput').click();
+}
+
+document.getElementById('fileInput').addEventListener('change', function(){
+  const file = this.files[0];
+  if (!file || !currentBox) return;
+
+  const formData = new FormData();
+  formData.append('file', file);
+
+  fetch('upload.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      currentBox.src = data.url; // đổi ảnh hiển thị
+    } else {
+      alert('Upload thất bại: ' + data.message);
+    }
+  })
+  .catch(err => alert('Lỗi upload: ' + err));
+});
+
+// gắn sự kiện click cho tất cả ảnh trong .image
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.image img').forEach(img => {
+    img.addEventListener('click', () => chooseImage(img));
+  });
+});
+</script>
+
+  <header>
+    <div class="container-fiuld">
+      <div class="row top">
+        <div class="col-md-6 top-1">
+          <div class="col-md-3 nu">
+            <select class="menu">
+              <option value="">nhiều hơn</option>
+              <option value=""><a href="">tạo model</a></option>
+              <option value=""><a href="">tạo giọng</a></option>
+              <option value=""><a href="">tạo môi trường</a></option>
+            </select>
+          </div>
+          <ul>
+            <li><a href="url" target="_blank">Kho</a></li>
+            <li><a href="nhantin.html" target="_blank">Nhắn tin</a></li>
+            <li><a href="">Tải về</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 top-2">
+
+          <a href=""><i class="fa-solid fa-user"></i></a>
+          <a href=""><i class="fa-brands fa-facebook"></i></i></a>
+          <a href=""><i class="fa-brands fa-youtube"></i></a>
+          <a href=""><i class="fa-solid fa-code"></i></a>
+          
+          <div class="Sreach">
+            <input class="input" type="type" placeholder="Search..." />
+            <button class="btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container-fluid con">
+      <div class="row top_1">
+        <div id="myCarousel" class="carousel slide mb-6 my-1" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class=""
+              aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+              class=""></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active"
+              aria-current="true"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="img/Zulia_2.jpg" />
+              <div class="container">
+                <div class="carousel-caption text-start">
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/ngayemdepnhat.jpg" />
+              <div class="container">
+                <div class="carousel-caption">
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item active">
+              <img src="img/dethuong.jpg" />
+              <div class="container">
+                <div class="carousel-caption text-end">
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="row mid_1">
+        <div class="col-md-8 m">
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/omgoi.jpg" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/omgoi2.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/omgoi3.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/omgoi4.png" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 m_2">
+          <div class="imge m-2">
+            <img src="img/end.jpg" />
+          </div>
+        </div>
+        <div class="col-md-8 m">
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/dongu1.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/dongu2.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/dongu3.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/dongu4.png" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 m">
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/phongcach1.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/phongcach2.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/phongcach3.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/phongcach4.png" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 m_2">
+          <div class="imge m-2">
+            <img src="img/phongcach.png" />
+          </div>
+        </div>
+        <div class="col-md-8 m">
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/phongcach5.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/phongcach6.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/phongcach7.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/phongcach8.png" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 m">
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/ngayemdepnhat2_1024x1024.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/ngayemdepnhat3.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/ngayemdepnhat5.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/ngayemdepnhat9.png" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 m_2">
+          <div class="imge m-2">
+            <img src="img/ngayemdepnhat4.png" />
+          </div>
+        </div>
+        <div class="col-md-8 m">
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/ngayemdepnhat7.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/ngayemdepnhat8.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/ngayemdepnhat6.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/ngayemdepnhat10.png" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 m">
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/daubep3_resized.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/daubep4.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/daubep1.jpg" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/daubep2.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 m_2">
+          <div class="imge m-2">
+            <img src="img/daubep_demo.jpg" />
+          </div>
+        </div>
+        <div class="col-md-8 m">
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/daubep5_resized.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/daubep6_resized.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/daubep7_resized.png" />
+            </div>
+          </div>
+          <div class="col-md-3 m-1">
+            <div class="image">
+              <img src="img/daubep8.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container-fiuld footer">
+      <div class="row fo-top">
+        <div class="col-md-6 fo-1">
+          <h4>CÁC NHÀ TÀI TRỢ</h4>
+          <p><a href="">Ared-Azu</a></p>
+        </div>
+        <div class="col-md-6 fo-1"></div>
+      </div>
+      <div class="row fo-bot">
+        <h3>CỐ LÊN NHÉ AKAIRA</h3>
+        </di>
+      </div>
+  </footer>
+</body>
+</html>

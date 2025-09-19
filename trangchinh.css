@@ -1,0 +1,164 @@
+.con{}
+
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.top{
+    background-color: black;
+    border-bottom: 3px solid #e5e51a;
+}
+
+.top .top-1{
+    margin: 10px 0px 10px 0px;
+    display: flex;
+}
+
+
+.top .top-1 ul{
+    list-style: none;
+    display: flex;
+    margin: 5px 0px 0px 0px;
+}
+
+.top .top-1 ul li{}
+
+.top .top-1 ul li a{
+    color: #e5e51a;
+    text-decoration: none;
+    padding: 0px 15px 0px 50px;
+    font-size: 18px;
+}
+
+.top .nu{
+    border-right: 3px solid #9fb73f;
+    margin: 5px 0px 0px 0px;
+}
+
+.top .menu{
+    margin: 0px 0px 0px 10px;
+    background: black;
+    color: #ff9404;
+    border: none;
+}
+
+
+.top .top-2{
+    margin: 10px 0px 10px 0px;
+}
+
+.top .top-2 .Sreach{
+    float: right;
+    margin: 0px 15px 0px 0px;
+}
+
+.top .top-2 .Sreach i{
+    color: #fff;
+}
+
+.top .top-2 a{
+    font-size: 16px;
+    color: antiquewhite;
+    margin: 0px 20px 0px 20px;
+}
+
+.top .top-2 a i{
+    border: 2px solid #fff;
+    padding: 5px 5px 5px 5px;
+    border-radius: 50%;
+    color: azure;
+}
+
+.top_1{
+    max-width: 100%;
+    --bs-gutter-x: none;
+    --bs-gutter-y: none;
+}
+
+.top_1 .carousel-inner{}
+
+.top_1 img{
+    display: block;
+}
+
+
+.mid_1{
+    background-image: url('D:/WEB/img/riengtu.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 0px 10px 0px;
+}
+.mid_1 .m{
+    display: flex;
+    border-right: 3px solid;
+    border-color: #147554;
+}
+
+.mid_1 .m-1{
+   
+}
+
+.mid_1 .m-1 .image{
+    max-width: 100%;
+    padding: 15px 0px 15px 0px;
+}
+
+.mid_1 .m-1 .image img{
+    width: 80%;
+    display: block;
+    margin: 20px 0px 20px 20px;
+    border: 1px solid #166165;
+    border-radius: 20px;
+}
+
+.mid_1 .m_2{}
+
+.mid_1 .m_2 .m-2{}
+
+.mid_1 .m_2 .m-2 img{
+    width: 90%;
+    margin: 50px 0px -200px 20px;
+    border: 1px solid #14d4dd;
+    border-radius: 20px;
+}
+
+.footer{
+    background: black;
+    color: antiquewhite;
+}
+
+.fo-top .fo-1{
+    margin: 15px;
+}
+
+.fo-top .fo-1 h4{
+    padding: 0px 20px;
+}
+
+.fo-top .fo-1 p{
+    font-size: 25px;
+    font-family: cursive;
+    padding: 0px 0px 0px 65px;
+}
+
+.fo-top .fo-1 p a{
+    text-decoration: none;
+    color:aliceblue;
+}
+
+.fo-bot{
+    border-top: 1px solid;
+}
+
+.fo-bot h3{
+    text-align: center;
+    font-family: cursive;
+    margin: 10px 0px 10px 0px;
+}
+
+
+
+
